@@ -21,7 +21,7 @@ export const account = new Account(client);
 export async function login() {
   try {
     const redirectUri = Linking.createURL("/");
-    const response = await account.createOAuth2Token(
+    const response = account.createOAuth2Token(
       OAuthProvider.Google,
       redirectUri
     );
@@ -51,8 +51,8 @@ export async function login() {
 
 export async function logout() {
   try {
-    await account.deleteSession("current");
-    return true;
+    const result = await account.deleteSession("current");
+    return result;
   } catch (error) {
     console.error(error);
     return false;

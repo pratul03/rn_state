@@ -71,7 +71,7 @@ const profile = () => {
               source={{ uri: user?.avatar }}
               className="size-44 relative rounded-full"
             />
-            <TouchableOpacity className="absolute bottom-11 right-2">
+            <TouchableOpacity className="absolute bottom-11 -right-3">
               <Image source={icons.edit} className="size-9" />
             </TouchableOpacity>
             <Text className="text-2xl font-rubikBold">{user?.name}</Text>
